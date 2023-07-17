@@ -8,6 +8,7 @@ namespace Exercise3
         {
             Console.WriteLine("Olá! Digite um texto: ");
             string text = Console.ReadLine();
+            Console.WriteLine(text);
             Console.WriteLine($"O seu texto possui {text.Length} caracteres.");
         }
     }
