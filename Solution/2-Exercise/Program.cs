@@ -12,8 +12,15 @@ namespace Exercise2
             user1.SetName(Console.ReadLine());
 
             Console.WriteLine("Digite a sua idade: ");
-            int userAge = int.Parse(Console.ReadLine());
-            user1.SetAge(userAge);
+            if (int.TryParse(Console.ReadLine(), out int userAge))
+            {
+                user1.SetAge(userAge);
+            }
+            else
+            {
+                Console.WriteLine("Idade inválida! Por favor, digite um número válido.");
+            }
+
 
             Console.WriteLine("Digite a sua altura: ");
             float userHeight = float.Parse(Console.ReadLine());
@@ -23,7 +30,7 @@ namespace Exercise2
             float userWidth = float.Parse(Console.ReadLine());
             user1.SetWidth(userWidth);
 
-            Console.WriteLine($"Nome: {user1.GetName()}\nIdade: {user1.GetAge()}\nAltura: {user1.GetHeight().ToString("0.00")}\nPeso: {user1.GetWidth().ToString("0.00")}");
+            Console.WriteLine($"Nome: {user1.GetName()} {Environment.NewLine}Idade: {user1.GetAge()} {Environment.NewLine}Altura: {user1.GetHeight().ToString("0.00")} {Environment.NewLine}Peso: {user1.GetWidth().ToString("0.00")}");
 
         }
     }
